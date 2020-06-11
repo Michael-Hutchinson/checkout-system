@@ -3,12 +3,14 @@ import { CartContext } from './basketContext';
 
 function Products(props) {
   const [cart, setCart] = useContext(CartContext);
-  const [basketQuanity, setBasketQuantity] = useState(0);	
+  const [basketQuanity, setBasketQuantity] = useState(0);
+  const [productPrice, setProductPrice] = useState(0);
 
   const addToCart = () => {
     const productData = { name: props.name, price: props.price };
     setCart(currentState => [...currentState, productData]);
     setBasketQuantity(basketQuanity + 1);
+    setProductPrice(productPrice + props.item.price, 0);
   }
   return (
     <div className="col-md-6">
@@ -20,6 +22,7 @@ function Products(props) {
         </div>
       </div>
       <p className={`${props.item.id} hidden`}>{basketQuanity}</p>
+      <p>{productPrice}</p>
     </div>
   );
 }
