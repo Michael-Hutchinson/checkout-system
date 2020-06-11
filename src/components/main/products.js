@@ -22,7 +22,11 @@ function Products(props) {
         </div>
       </div>
       <p className={`${props.item.id} hidden`}>{basketQuanity}</p>
-      <p>{productPrice}</p>
+      {(basketQuanity === 3 && props.item.id === 1) || (basketQuanity === 2 && props.item.id === 2)  ? (
+        <p>{productPrice-props.item.specialPrice}</p>
+      ) : (
+        <p>{productPrice}</p>
+      )}
     </div>
   );
 }

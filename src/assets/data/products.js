@@ -2,13 +2,13 @@ const productData = [
     {
       "name": "A",
       "price": 50,
-      "specialPrice": 130,
+      "specialPrice": 20,
       id: 1
     },
     {
       "name": "B",
       "price": 30,
-      "specialPrice": 45,
+      "specialPrice": 15,
       id: 2
     },
     {
