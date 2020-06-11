@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Products(props) {
+  const [basketQuanity, setBasketQuantity] = useState(0);
   const addToBasket = () => {
     console.log('click worked');
+    setBasketQuantity(basketQuanity + 1);
   }
   return (
     <div className="col-md-6">
@@ -13,6 +15,7 @@ function Products(props) {
           <button onClick={addToBasket} className="btn btn-primary">Add to basket</button>
         </div>
       </div>
+      <h1>{basketQuanity}</h1>
     </div>
   );
 }
