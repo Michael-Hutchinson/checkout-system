@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState} from 'react';
 import { CartContext } from './basketContext';
 
 function Products(props) {
   const [cart, setCart] = useContext(CartContext);
+  const [basketQuanity, setBasketQuantity] = useState(0);	
 
   const addToCart = () => {
     const productData = { name: props.name, price: props.price };
     setCart(currentState => [...currentState, productData]);
+    setBasketQuantity(basketQuanity + 1);
   }
   return (
     <div className="col-md-6">
@@ -17,6 +19,7 @@ function Products(props) {
           <button onClick={addToCart} className="btn btn-primary">Add to basket</button>
         </div>
       </div>
+      <p className={`${props.item.id} hidden`}>{basketQuanity}</p>
     </div>
   );
 }
