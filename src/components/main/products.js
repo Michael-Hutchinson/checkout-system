@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from './basketContext';
 
 function Products(props) {
-  const [basketQuanity, setBasketQuantity] = useState(0);
-  const addToBasket = () => {
-    console.log('click worked');
-    setBasketQuantity(basketQuanity + 1);
+  const [cart, setCart] = useContext(CartContext);
+
+  const addToCart = () => {
+    const tshirt = { name: props.name, price: props.price };
+    setCart(currentState => [...currentState, tshirt]);
   }
   return (
     <div className="col-md-6">
@@ -12,10 +14,9 @@ function Products(props) {
         <div className="card-body">
           <h2 className="card-title">Product Name: {props.item.name}</h2>
           <p className="card-text">Price: £{props.item.price}</p>
-          <button onClick={addToBasket} className="btn btn-primary">Add to basket</button>
+          <button onClick={addToCart} className="btn btn-primary">Add to basket</button>
         </div>
       </div>
-      <h1>{basketQuanity}</h1>
     </div>
   );
 }
