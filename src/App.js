@@ -8,12 +8,14 @@ import productData from './assets/data/products';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import Products from './components/main/products'
+import Basket from './components/main/basket'
 
 function App() {
   const prods = productData.map(item => <Products key={item.name} item={item} />)
   return (
     <div>
       <Header />
+      <Basket />
       <div className="container">
         <div className="row">
           {prods}
