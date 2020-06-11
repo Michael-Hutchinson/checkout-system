@@ -14,7 +14,11 @@ function App() {
   return (
     <div>
       <Header />
-      {prods}
+      <div className="container">
+        <div className="row">
+          {prods}
+        </div>
+      </div>
       <Footer />
     </div>
   );

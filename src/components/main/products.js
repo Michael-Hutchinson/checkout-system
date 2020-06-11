@@ -1,15 +1,19 @@
 import React from 'react';
 
 function Products(props) {
+  const addToBasket = () => {
+    console.log('click worked');
+  }
   return (
-    <section>
-        <h2>{props.item.name}</h2>
-        <br />
-        <p>{props.item.price}</p>
-        <br />
-        <button>Add to basket</button>
-        <hr />
-    </section>
+    <div className="col-md-6">
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title">Product Name: {props.item.name}</h2>
+          <p className="card-text">Price: £{props.item.price}</p>
+          <button onClick={addToBasket} className="btn btn-primary">Add to basket</button>
+        </div>
+      </div>
+    </div>
   );
 }
 
