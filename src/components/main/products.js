@@ -5,8 +5,8 @@ function Products(props) {
   const [cart, setCart] = useContext(CartContext);
 
   const addToCart = () => {
-    const tshirt = { name: props.name, price: props.price };
-    setCart(currentState => [...currentState, tshirt]);
+    const productData = { name: props.name, price: props.price };
+    setCart(currentState => [...currentState, productData]);
   }
   return (
     <div className="col-md-6">
