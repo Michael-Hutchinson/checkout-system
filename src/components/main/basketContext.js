@@ -9,4 +9,4 @@ export const CartProvider = (props) => {
       {props.children}
     </CartContext.Provider>
   )
-}
+};
