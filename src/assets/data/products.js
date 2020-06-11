@@ -1,20 +1,22 @@
-[
+const productData = [
     {
-      "item": "A",
+      "name": "A",
       "price": 50,
       "specialPrice": 130
     },
     {
-      "item": "B",
+      "name": "B",
       "price": 30,
       "specialPrice": 45
     },
     {
-      "item": "C",
+      "name": "C",
       "price": 20
     },
     {
-      "item": "D",
+      "name": "D",
       "price": 15
     }
   ]
+
+  export default productData
